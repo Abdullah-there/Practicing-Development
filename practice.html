@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: purple;
+      }
+
+      nav {
+        margin: 0;
+        padding: 0;
+      }
+
+      .navbar {
+        list-style-type: none; 
+        display: flex;
+        justify-content: flex-start;
+        padding: 10px;
+      }
+
+      .bar {
+        display: none;
+      }
+
+      .bar1 {
+        display: flex;
+        list-style-type: none;
+        flex-direction: column;
+        width: 100vw;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10vh;
+        transition: 2s;
+      }
+
+      .nav-changes {
+        flex-grow: 2;
+      }
+
+      .nav-changes:hover {
+        font-size: larger;
+        text-decoration: underline;
+        color: white;
+        transition: 1s;
+      }
+
+      .nav-item {
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: 7px;
+        list-style-type: none;
+      }
+
+      .nav-item:hover {
+        text-decoration: underline;
+        color: white;
+      }
+      
+      .icon {
+        display: none;
+        margin-left: 8px;
+        margin-right: 8px;
+        font-size: x-large;
+        cursor: pointer;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      #nav-3 {
+        flex-grow: 2;
+      }
+
+      #nav-1 {
+        background-color: white;
+        color: black;
+        border-radius: 2px;
+        padding: 2px;
+      }
+
+      #nav-main {
+        color: yellow;
+        font-weight: bolder;
+        font-size: x-large;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-right: 8px;
+      }
+
+      #nav-2 {
+        background-color: yellow;
+        color: purple;
+        border-radius: 15px;
+        padding: 10px;
+      }
+
+      .main-heading {
+        color: yellow;
+        text-align: center;
+        font-size: 5rem;
+      }
+
+      #heading-1 {
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+      }
+
+      .main {
+        display: flex;
+      }
+
+      .main-1 {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 2;
+      }
+
+      .main-2 {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 2;
+      }
+
+      #first-div {
+        background-color: pink;
+        width: 40vw;
+        height: 65vh;
+        margin-top: 15vh;
+        padding: 25px;
+        margin-right: 5px;
+      }
+
+      .sub-heading {
+        color: purple;
+        font-size: 3rem;
+      }
+
+      .sub-heading-2 {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+      }
+
+      .buttons {
+        display: flex;
+      }
+
+      .btn {
+        border: 2px purple solid;
+        border-radius: 25px;
+        padding: 8px;
+
+      }
+
+      #btn1 {
+        background-color: purple;
+        color: pink;
+        flex-grow: 2;
+      }
+
+      #btn2 {
+        background-color: pink;
+        color: purple;
+        flex-grow: 2;
+      }
+
+      @media (max-width: 1070px) {
+        .main-heading {
+          font-size: 4rem;
+        }
+      }
+
+      @media (max-width: 890px) {
+        .main-heading {
+          font-size: 3rem;
+        }
+
+        #first-div {
+          margin-top: 10vh;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .main {
+          flex-direction: column;
+        }
+        .main-1 {
+          align-items: center;
+        }
+        .main-2 {
+          justify-content: center;
+          align-items: center;
+        }
+        #first-div {
+          width: 80vw;
+        }
+        .buttons {
+          flex-direction: column;
+        }
+        #nav-main {
+          flex-grow: 2;
+        }
+        .dis {
+          display: none;
+        }
+        .icon {
+          display: list-item;
+        }
+      }
+
+      @media (max-width: 360px) {
+        #first-div {
+          width: 65vw;
+          margin-left: 3vw;
+          margin-right: 3vw;
+          margin-top: 5px;
+        }
+        .main-heading {
+          font-size: 2rem;
+        }
+        .sub-heading {
+          font-size: 2rem;
+        }
+        .sub-heading-2 {
+          font-size: small;
+        }
+        p {
+          font-size: small;
+        }
+        #nav-main {
+          font-size: medium;
+          margin: 2px;
+          flex-grow: 2;
+        }
+        .nav-item {
+          margin: 2px;
+          font-size: small;
+        }
+        .icon {
+          font-size: small;
+        }
+
+      }
+      
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="navbar" id="mainbar">
+      <li id="nav-main">Tooggl</li>
+      <li class="nav-item dis"><a href="#">Products</a></li>
+      <li class="nav-item dis"><a href="#">blog</a></li>
+      <li class="nav-item dis"><a href="#">Our mission</a></li>
+      <li class="nav-item dis" id="nav-3"><a href="#">Toggl at work <span id="nav-1">We are hiring</span></a></li>
+      <li class="nav-item"><a href="#">Log in</a></li>
+      <li class="nav-item"><a href="#"><span id="nav-2">Try Tog</span></a></li>
+      <li class="icon" onclick="toggleScroll()">aa</li>
+    </ul>
+    <div class="bar" id="bar1">
+      <li class="nav-changes"><a href="#">Products</a></li>
+    <li class="nav-changes"><a href="#">blog</a></li>
+    <li class="nav-changes"><a href="#">Our mission</a></li>
+    <li class="nav-changes" id="nav-3"><a href="#">Toggl at work <span id="nav-1">We are hiring</span></a></li>
+    </div>
+  </nav>
+  <div class="main">
+    <div class="main-1">
+      <div class="main-1-part1">
+        <h1 class="main-heading">Meet Toggle <br>Three products; <br><span id="heading-1">one</span> Mission</h1>
+      </div>
+    </div>
+    <div class="main-2">
+      <div class="main-2-part-2">
+        <div id="first-div">
+          <h1 class="sub-heading">toggl track</h1>
+          <h2 class="sub-heading-2">Effortless time reporting <br> and reporting</h2>
+          <p>abhv uf Ibv fugiufgf augfga aigf augigff faiugafiahafutf akgaaa ayiafg6f fygaiyf agaffyia akgaiuf akayif jhwhgiouNjkVuofF OO
+          </p>
+          <div class="buttons">
+            <button class="btn" id="btn1">Try Toggle plan</button>
+            <button class="btn" id="btn2">Or Explore more</button>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+   
+
+  <script src="./code.js"></script>
+</body>
+</html>
